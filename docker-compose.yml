@@ -1,0 +1,11 @@
+# docker-compose.yml
+services:
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: wa-api-workers:latest
+    container_name: wa-api-workers
+    env_file:
+      - .env
+    restart: unless-stopped
